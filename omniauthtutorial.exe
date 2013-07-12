@@ -1,0 +1,50 @@
+  # nano $HOME/Documents/gitup
+
+      ---- copy and paste ----
+
+      #!/bin/bash
+
+      ## Quick git commit local changes and push to online account
+
+      # SET LOCAL REPOSITORY LOCATION
+      localRepository="C:/Users/USER/omniauthtutorial"
+
+
+      # script below
+      # ===========
+
+      # change to local git repository directory
+      cd $localRepository && clear
+
+      # User feedback on process...
+      echo && echo "Checking for changes made to local repository" && echo
+
+      # Show git status
+      git status
+
+      # Allow to exit if no changes are required
+      echo && read -p "Press any key to continue, or [ Ctrl + C ] to exit ... " && clear
+
+      # User feedback on process...
+      echo && echo "Committing changes to local repository ..." && echo
+
+      # Perform git add, update and commit
+      git add . 
+      git add -u  
+
+      # comment commits with current date
+      git commit -am "`date`"
+
+      # User feedback on process...
+      echo && echo "Updating remote repository ..." && echo
+
+      # Perform git push to online repository
+      git push origin master
+
+      # User feedback on process...
+      echo && echo "Remote repository updated :-)" && echo
+
+      # Show git status
+      git status
+
+      echo
